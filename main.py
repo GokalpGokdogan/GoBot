@@ -1,24 +1,32 @@
 import discord
-import os
+from discord.ext import commands
+import music
 
-intents = discord.Intents.default()
-intents.message_content = True
+# cogs = [music]
 
-client = discord.Client(intents=intents)
+# intents = discord.Intents.all()  #default() intents.message_content = True
+# client = commands.Bot(command_prefix='g!', intents=intents)
 
+# for i in range(len(cogs)):
+#    cogs[i].setup(client)
+
+
+intents = discord.Intents.all()
+client = commands.Bot(command_prefix='g!', intents=intents, case_insensitive=True)
+
+cogs = [music]
+
+for i in range(len(cogs)):
+    cogs[i].setup(client)
+# client.load_extension(f"music")
 
 @client.event
 async def on_ready():
-  print("Lets gooooo baby!!")
+    print(f'Bot connected ')
 
 
-@client.event
-async def on_message(message):
-  if message.author == client.user:
-    return
-  message_up = message
-  if message_up.content.startswith('G') or message_up.content.startswith('D'):
-    await message.channel.send("How you doin?!")
+# @client.event
+# async def on_ready():
+# print("Lets gooooo baby!!")
 
-
-client.run(os.environ['TOKEN'])
+client.run("MTAzMzQ3OTU1MzA4OTI4NjE3NA.GoX25D.5Z8oI0abMmmo-HIwB-oYCm6X_gSaPV1UdXm3-E")
