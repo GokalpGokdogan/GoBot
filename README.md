@@ -1,2 +1,17 @@
-# GoDoBoto
-A  discord bot that can be personalized. It will play songs on command, show the current hour in Turkey, Germany and Canada.
+# GoBot
+
+A  discord bot that uses discord.py library and Giphy API.
+
+It has certain functions like:
+
+->Coin Toss
+
+->Dice Throw
+
+->Send GIF
+
+->Say Hi
+
+->Slap (an user)
+
+->It also reads the messages and sends a message from a library when it sees the trigger word
